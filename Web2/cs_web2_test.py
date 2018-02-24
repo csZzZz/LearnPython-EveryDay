@@ -1,3 +1,4 @@
+from Web1 import cs_Web1_test
 # 2017/02/18
 # 2
 # ========
@@ -62,18 +63,32 @@ def header_from_dict(headers):
     范例如下
     对于
     {
-    	'Content-Type': 'text/html',
+        'Content-Type': 'text/html',
         'Content-Length': 127,
     }
     返回如下 str
     'Content-Type: text/html\r\nContent-Length: 127\r\n'
     '''
-    pass
+
+    return
 
 
 # 作业 2.4
 #
 # 为作业 2.3 写测试
+def test_header_from_dict():
+    headers = {
+        'Content-Type': 'text/html',
+        'Content-Length': 127,
+    }
+    expected = [
+        'Content-Type: text/html\r\nContent-Length: 127\r\n'
+    ]
+    assert header_from_dict(headers) in expected
+
+
+# 测试函数通过
+test_header_from_dict()
 
 
 # 作业 2.5
